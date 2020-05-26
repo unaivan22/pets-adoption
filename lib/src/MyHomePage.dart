@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'custom_icons.dart' as CustomIcons;
+import 'custom_icons.dart';
 import 'NearestPage.dart';
 import 'WishPage.dart';
 import 'ChatPage.dart';
@@ -37,13 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
       return CupertinoTabScaffold(
           tabBar: CupertinoTabBar(items: [
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.paw_solid), title: Text("Nearest")),
+                icon: Icon(CustomIcons.paw, size: 22.0,), title: Text("Nearest")),
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.heart_solid), title: Text("Wish")),
+                icon: Icon(CupertinoIcons.heart_solid, size: 24.0,), title: Text("Wish")),
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.mail_solid), title: Text("Chat")),
+                icon: Icon(CustomIcons.comments, size: 22.0,), title: Text("Chat")),
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.person_solid), title: Text("Profile"))
+                icon: Icon(CustomIcons.user_alt, size: 21.0,), title: Text("Profile"))
           ]),
           tabBuilder: (context, index) {
             switch (index) {

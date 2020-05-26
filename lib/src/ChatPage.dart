@@ -78,7 +78,7 @@ class ChatPage extends StatelessWidget {
                                     Text(
                                       'Jocelyn',
                                       style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.black87,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
                                       ),
@@ -90,8 +90,8 @@ class ChatPage extends StatelessWidget {
                                       'Hi, this cat are amazing, if you are interested you can see it directly',
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
-                                        color: Color(0xFF42A5F5),
-                                        fontSize: 14,
+                                        color: Colors.black54,
+                                        fontSize: 12,
                                       ),
                                     ),
                                     Padding(

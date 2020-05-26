@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       return CupertinoApp(
         theme: CupertinoThemeData(
             barBackgroundColor: CupertinoColors.extraLightBackgroundGray,
-            primaryColor: CupertinoColors.destructiveRed),
+            primaryColor: CupertinoColors.activeBlue),
         home: MyHomePage(
           title: "Ios",
         ),
