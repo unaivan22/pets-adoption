@@ -19,6 +19,14 @@ class ProfilePage extends StatelessWidget {
             return <Widget>[
               CupertinoSliverNavigationBar(
                 largeTitle: Text('Profile'),
+                leading: new CupertinoButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Upload',
+                    style: TextStyle(color: Colors.blueAccent),
+                  ),
+                  padding: EdgeInsets.all(0.0),
+                ),
                 trailing: new CupertinoButton(
                   child: new Icon(
                     CustomIcons.bell,
