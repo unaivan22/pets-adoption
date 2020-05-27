@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pets_adoption/src/TestRoute.dart';
 import 'src/MyHomePage.dart';
 import 'src/Foundation.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     if (isIos) {
       return CupertinoApp(
+        routes: <String, WidgetBuilder> {
+          '/TestRoute': (BuildContext context) => new TestRoute(),
+        },
         theme: CupertinoThemeData(
             barBackgroundColor: CupertinoColors.extraLightBackgroundGray,
             primaryColor: CupertinoColors.activeBlue),

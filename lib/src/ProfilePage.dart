@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pets_adoption/src/custom_icons.dart';
 import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
-import 'custom_icons.dart';
+import 'TestRoute.dart';
+// import 'custom_icons.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -17,6 +19,21 @@ class ProfilePage extends StatelessWidget {
             return <Widget>[
               CupertinoSliverNavigationBar(
                 largeTitle: Text('Profile'),
+                trailing: new CupertinoButton(
+                  child: new Icon(
+                    CustomIcons.bell,
+                    size: 24.0,
+                    color: Colors.grey,
+                  ),
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return new CupertinoAlertDialog();
+                        });
+                  },
+                  padding: EdgeInsets.all(0.0),
+                ),
               )
             ];
           },
@@ -36,15 +53,19 @@ class ProfilePage extends StatelessWidget {
                             fit: BoxFit.cover,
                             image: new NetworkImage(
                                 "https://avatars1.githubusercontent.com/u/25717454?s=460&u=ea40151ad2416268a9fd5b268277aa1d28579da5&v=4")))),
-                Container(
+                GestureDetector(
+                  child: Container(
                   margin: EdgeInsets.only(top: 10.0, bottom: 30.0),
                   child: CupertinoButton(
                     onPressed: () {
-                      // TODO: do something in here
+                      debugPrint('Tapped lur');
+                       Navigator.push(context,MaterialPageRoute(builder: (context) => TestRoute()));
                     },
                     child: Text("Edit Profile"),
                   ),
                 ),
+                ),
+                
                 Container(
                     decoration: BoxDecoration(
                         boxShadow: [

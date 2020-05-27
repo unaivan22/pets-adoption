@@ -16,6 +16,21 @@ class WishPage extends StatelessWidget {
             return <Widget>[
               CupertinoSliverNavigationBar(
                 largeTitle: Text('List of Wish'),
+                trailing: new CupertinoButton(
+                  child: new Icon(
+                    CustomIcons.bell,
+                    size: 24.0,
+                    color: Colors.grey,
+                  ),
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return new CupertinoAlertDialog();
+                        });
+                  },
+                  padding: EdgeInsets.all(0.0),
+                ),
               )
             ];
           },

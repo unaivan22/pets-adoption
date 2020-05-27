@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:pets_adoption/src/custom_icons.dart';
 
 class NearestPage extends StatelessWidget {
   @override
@@ -17,6 +18,30 @@ class NearestPage extends StatelessWidget {
             return <Widget>[
               CupertinoSliverNavigationBar(
                 largeTitle: Text("Nearest"),
+                leading: new CupertinoButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Setting',
+                    style: TextStyle(color: Colors.blueAccent),
+                  ),
+                  padding: EdgeInsets.all(0.0),
+                ),
+                trailing: new CupertinoButton(
+                  child: new Icon(
+                    CustomIcons.bell,
+                    size: 24.0,
+                    color: Colors.grey,
+                  ),
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return new CupertinoAlertDialog();
+                        });
+                  },
+                  padding: EdgeInsets.all(0.0),
+                ),
+                // trailing: new Text('Setting', style: TextStyle(color: Colors.blueAccent),),
               )
             ];
           },
@@ -25,7 +50,7 @@ class NearestPage extends StatelessWidget {
                   top: 20.0, right: 0.0, bottom: 20.0, left: 0.0),
               //  color: Colors.pinkAccent,
               child: SingleChildScrollView(
-                 physics: ClampingScrollPhysics(),
+                physics: ClampingScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 child: Column(children: <Widget>[
                   Row(

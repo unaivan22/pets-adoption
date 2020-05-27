@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'chat_detail.dart';
+import 'custom_icons.dart';
 
 class ChatPage extends StatelessWidget {
   @override
@@ -16,6 +17,21 @@ class ChatPage extends StatelessWidget {
             return <Widget>[
               CupertinoSliverNavigationBar(
                 largeTitle: Text('Chat'),
+                trailing: new CupertinoButton(
+                  child: new Icon(
+                    CustomIcons.bell,
+                    size: 24.0,
+                    color: Colors.grey,
+                  ),
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return new CupertinoAlertDialog();
+                        });
+                  },
+                  padding: EdgeInsets.all(0.0),
+                ),
               )
             ];
           },
