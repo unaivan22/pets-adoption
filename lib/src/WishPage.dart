@@ -85,6 +85,7 @@ class WishPage extends StatelessWidget {
             //   title: 'Direct Messages',
             // ),
             ListView.builder(
+              padding: EdgeInsets.only(top: 0),
               itemCount: 3,
               shrinkWrap: true,
               physics: ClampingScrollPhysics(),

@@ -1,157 +1,273 @@
 import 'package:flutter/material.dart';
-// import 'Foundation.dart';
+import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:hexcolor/hexcolor.dart';
 
-class ChatDetails extends StatefulWidget {
-  @override
-  _ChatDetailsState createState() => _ChatDetailsState();
-}
+// class ChatDetails extends StatefulWidget {
+//   @override
+//   _ChatDetailsState createState() => _ChatDetailsState();
+// }
 
-class _ChatDetailsState extends State<ChatDetails> {
+class ChatDetails extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0.4,
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
-        title: Row(
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("Notifications"),
+      ),
+      child: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[];
+        },
+        body: Stack(
           children: <Widget>[
             Container(
-              width: 40,
-              height: 40,
-              margin: EdgeInsets.fromLTRB(0, 5, 10, 0),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage('https://i.pravatar.cc/110'),
-                backgroundColor: Colors.grey[200],
-                minRadius: 30,
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  'Selina Kyle',
-                  style: TextStyle(color: Colors.black),
-                ),
-                Text(
-                  'Online Now',
-                  style: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 12,
-                  ),
-                )
-              ],
-            )
-          ],
-        ),
-      ),
-      body: Stack(
-        children: <Widget>[
-          Container(
-            color: Colors.white,
-            child: Column(
-              children: <Widget>[
-                Flexible(
-                  child: ListView.builder(
-                    itemCount: 1,
-                    shrinkWrap: true,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Column(
-                          children: <Widget>[
-                            Text(
-                              'Today',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
-                            ),
-                            Bubble(
-                              message: 'Hi How are you ?',
-                              isMe: true,
-                            ),
-                            Bubble(
-                              message: 'have you seen the docs yet?',
-                              isMe: true,
-                            ),
-                            Text(
-                              'Feb 25, 2018',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
-                            ),
-                            Bubble(
-                              message: 'i am fine !',
-                              isMe: false,
-                            ),
-                            Bubble(
-                              message: 'yes i\'ve seen the docs',
-                              isMe: false,
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            width: MediaQuery.of(context).size.width,
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                BoxShadow(
-                  color: Colors.grey[300],
-                  offset: Offset(-2, 0),
-                  blurRadius: 5,
-                ),
-              ]),
-              child: Row(
+              color: Colors.white,
+              child: Column(
                 children: <Widget>[
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.camera,
-                      color: Color(0xff3E8DF3),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.image,
-                      color: Color(0xff3E8DF3),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 15),
-                  ),
-                  Expanded(
-                    child: TextFormField(
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                        hintText: 'Enter Message',
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.send,
-                      color: Color(0xff3E8DF3),
+                  Flexible(
+                    child: ListView.builder(
+                      itemCount: 1,
+                      shrinkWrap: true,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                'Today',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 12),
+                              ),
+                              Bubble(
+                                message: 'Hi How are you ?',
+                                isMe: true,
+                              ),
+                              Bubble(
+                                message: 'have you seen the docs yet?',
+                                isMe: true,
+                              ),
+                              Text(
+                                'Feb 25, 2018',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 12),
+                              ),
+                              Bubble(
+                                message: 'i am fine !',
+                                isMe: false,
+                              ),
+                              Bubble(
+                                message: 'yes i\'ve seen the docs',
+                                isMe: false,
+                              ),
+                            ],
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
               ),
             ),
-          )
-        ],
+            // Positioned(
+            //   bottom: 0,
+            //   left: 0,
+            //   // width: MediaQuery.of(context).size.width,
+            //   child: Container(
+            //     padding: EdgeInsets.all(10),
+            //     decoration: BoxDecoration(color: Colors.white, boxShadow: [
+            //       BoxShadow(
+            //         color: Colors.grey[300],
+            //         offset: Offset(-2, 0),
+            //         blurRadius: 5,
+            //       ),
+            //     ]),
+            //     child: Row(
+            //         children: <Widget>[
+            //         Text('unad disini'),
+            //         IconButton(
+            //           onPressed: () {},
+            //           icon: Icon(
+            //             Icons.camera,
+            //             color: Color(0xff3E8DF3),
+            //           ),
+            //         ),
+            //         IconButton(
+            //           onPressed: () {},
+            //           icon: Icon(
+            //             Icons.image,
+            //             color: Color(0xff3E8DF3),
+            //           ),
+            //         ),
+            //         Padding(
+            //           padding: EdgeInsets.only(left: 15),
+            //         ),
+            //         Expanded(
+            //           child: TextFormField(
+            //             keyboardType: TextInputType.text,
+            //             decoration: InputDecoration(
+            //               hintText: 'Enter Message',
+            //               border: InputBorder.none,
+            //             ),
+            //           ),
+            //         ),
+            //         IconButton(
+            //           onPressed: () {},
+            //           icon: Icon(
+            //             Icons.send,
+            //             color: Color(0xff3E8DF3),
+            //           ),
+            //         ),
+            //       ],
+            //       ),
+            //   ),
+            // )
+          ],
+        ),
       ),
     );
+    //return Scaffold(
+        // appBar: AppBar(
+        //   elevation: 0.4,
+        //   iconTheme: IconThemeData(color: Colors.black),
+        //   backgroundColor: Colors.white,
+        //   title: Row(
+        //     children: <Widget>[
+        //       Container(
+        //         width: 40,
+        //         height: 40,
+        //         margin: EdgeInsets.fromLTRB(0, 5, 10, 0),
+        //         child: CircleAvatar(
+        //           backgroundImage: NetworkImage('https://i.pravatar.cc/110'),
+        //           backgroundColor: Colors.grey[200],
+        //           minRadius: 30,
+        //         ),
+        //       ),
+        //       Column(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         crossAxisAlignment: CrossAxisAlignment.start,
+        //         children: <Widget>[
+        //           Text(
+        //             'Selina Kyle',
+        //             style: TextStyle(color: Colors.black),
+        //           ),
+        //           Text(
+        //             'Online Now',
+        //             style: TextStyle(
+        //               color: Colors.grey[400],
+        //               fontSize: 12,
+        //             ),
+        //           )
+        //         ],
+        //       )
+        //     ],
+        //   ),
+        // ),
+        // body: Stack(
+        //   children: <Widget>[
+        //     Container(
+        //       color: Colors.white,
+        //       child: Column(
+        //         children: <Widget>[
+        //           Flexible(
+        //             child: ListView.builder(
+        //               itemCount: 1,
+        //               shrinkWrap: true,
+        //               itemBuilder: (BuildContext context, int index) {
+        //                 return Padding(
+        //                   padding: EdgeInsets.all(10),
+        //                   child: Column(
+        //                     children: <Widget>[
+        //                       Text(
+        //                         'Today',
+        //                         style:
+        //                             TextStyle(color: Colors.grey, fontSize: 12),
+        //                       ),
+        //                       Bubble(
+        //                         message: 'Hi How are you ?',
+        //                         isMe: true,
+        //                       ),
+        //                       Bubble(
+        //                         message: 'have you seen the docs yet?',
+        //                         isMe: true,
+        //                       ),
+        //                       Text(
+        //                         'Feb 25, 2018',
+        //                         style:
+        //                             TextStyle(color: Colors.grey, fontSize: 12),
+        //                       ),
+        //                       Bubble(
+        //                         message: 'i am fine !',
+        //                         isMe: false,
+        //                       ),
+        //                       Bubble(
+        //                         message: 'yes i\'ve seen the docs',
+        //                         isMe: false,
+        //                       ),
+        //                     ],
+        //                   ),
+        //                 );
+        //               },
+        //             ),
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //     Positioned(
+        //       bottom: 0,
+        //       left: 0,
+        //       width: MediaQuery.of(context).size.width,
+        //       child: Container(
+        //         padding: EdgeInsets.all(10),
+        //         decoration: BoxDecoration(color: Colors.white, boxShadow: [
+        //           BoxShadow(
+        //             color: Colors.grey[300],
+        //             offset: Offset(-2, 0),
+        //             blurRadius: 5,
+        //           ),
+        //         ]),
+        //         child: Row(
+        //           children: <Widget>[
+        //             IconButton(
+        //               onPressed: () {},
+        //               icon: Icon(
+        //                 Icons.camera,
+        //                 color: Color(0xff3E8DF3),
+        //               ),
+        //             ),
+        //             IconButton(
+        //               onPressed: () {},
+        //               icon: Icon(
+        //                 Icons.image,
+        //                 color: Color(0xff3E8DF3),
+        //               ),
+        //             ),
+        //             Padding(
+        //               padding: EdgeInsets.only(left: 15),
+        //             ),
+        //             Expanded(
+        //               child: TextFormField(
+        //                 keyboardType: TextInputType.text,
+        //                 decoration: InputDecoration(
+        //                   hintText: 'Enter Message',
+        //                   border: InputBorder.none,
+        //                 ),
+        //               ),
+        //             ),
+        //             IconButton(
+        //               onPressed: () {},
+        //               icon: Icon(
+        //                 Icons.send,
+        //                 color: Color(0xff3E8DF3),
+        //               ),
+        //             ),
+        //           ],
+        //         ),
+        //       ),
+        //     )
+        //   ],
+        // ),
+        //);
   }
 }
 
@@ -186,8 +302,8 @@ class Bubble extends StatelessWidget {
                               1
                             ],
                           colors: [
-                              Color(0xFFF6D365),
-                              Color(0xFFFDA085),
+                              Colors.blueAccent,
+                              Colors.blueAccent,
                             ])
                       : LinearGradient(
                           begin: Alignment.topRight,

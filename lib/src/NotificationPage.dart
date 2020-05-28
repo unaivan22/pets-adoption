@@ -3,36 +3,19 @@ import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'chat_detail.dart';
 import 'custom_icons.dart';
+import 'package:hexcolor/hexcolor.dart';
 
-class ChatPage extends StatelessWidget {
+class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (isIos) {
       return CupertinoPageScaffold(
-        // navigationBar: CupertinoNavigationBar(
-        //   middle: Text("User Info"),
-        // ),
+        navigationBar: CupertinoNavigationBar(
+          middle: Text("Notifications"),
+        ),
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
-              CupertinoSliverNavigationBar(
-                largeTitle: Text('Chat'),
-                trailing: new CupertinoButton(
-                  child: new Icon(
-                    CustomIcons.bell,
-                    size: 24.0,
-                    color: Colors.grey,
-                  ),
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return new CupertinoAlertDialog();
-                        });
-                  },
-                  padding: EdgeInsets.all(0.0),
-                ),
-              )
             ];
           },
           body: SingleChildScrollView(
@@ -40,8 +23,7 @@ class ChatPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 ListView.builder(
-                  padding: EdgeInsets.only(top: 0),
-                  itemCount: 40,
+                  itemCount: 20,
                   shrinkWrap: true,
                   physics: ClampingScrollPhysics(),
                   scrollDirection: Axis.vertical,
@@ -57,20 +39,22 @@ class ChatPage extends StatelessWidget {
                           );
                         },
                         child: Container(
-                          color: Colors.white,
-                          // margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                          padding: EdgeInsets.only(top: 15.0, right: 15.0, bottom: 15.0, left: 15.0),
-                          // decoration: BoxDecoration(
-                          //   boxShadow: [
-                          //     BoxShadow(
-                          //       color: Colors.grey.withAlpha(50),
-                          //       offset: Offset(0, 0),
-                          //       blurRadius: 5,
-                          //     ),
-                          //   ],
-                          //   borderRadius: BorderRadius.circular(5),
-                          //   color: Colors.white,
-                          // ),
+                          // color: Colors.white,
+                          margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                          padding: EdgeInsets.only(top: 10.0, right: 15.0, bottom: 10.0, left: 15.0),
+                          // margin: EdgeInsets.all(20.0),
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withAlpha(50),
+                                offset: Offset(0, 0),
+                                blurRadius: 5,
+                              ),
+                            ],
+                            borderRadius: BorderRadius.circular(5),
+                            // color: Colors.greenAccent,
+                            color: Hexcolor('#ffffff'),
+                          ),
                           child: Row(
                             children: <Widget>[
                               Stack(
@@ -78,7 +62,7 @@ class ChatPage extends StatelessWidget {
                                   Container(
                                     child: CircleAvatar(
                                       backgroundImage: NetworkImage(
-                                          'https://i.pravatar.cc/11$index'),
+                                          'https://i.pravatar.cc/21$index'),
                                       minRadius: 30,
                                       backgroundColor: Colors.white,
                                     ),
@@ -93,7 +77,7 @@ class ChatPage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      'Jocelyn',
+                                      'New chat from unaivan',
                                       style: TextStyle(
                                         color: Colors.black87,
                                         fontWeight: FontWeight.bold,
@@ -124,17 +108,18 @@ class ChatPage extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              // Column(
-                              //   children: <Widget>[
-                              //     Padding(
-                              //       padding: EdgeInsets.only(right: 15),
-                              //       child: Icon(
-                              //         Icons.chevron_right,
-                              //         size: 18,
-                              //       ),
-                              //     )
-                              //   ],
-                              // )
+                              Column(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: EdgeInsets.only(right: 0.0, left: 10.0),
+                                    child: Icon(
+                                      CustomIcons.circle,
+                                      size: 14,
+                                      color: Colors.red,
+                                    ),
+                                  )
+                                ],
+                              )
                             ],
                           ),
                         ),

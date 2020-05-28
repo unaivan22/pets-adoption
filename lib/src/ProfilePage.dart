@@ -3,6 +3,7 @@ import 'package:pets_adoption/src/custom_icons.dart';
 import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'TestRoute.dart';
+import 'NotificationPage.dart';
 // import 'custom_icons.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -28,17 +29,24 @@ class ProfilePage extends StatelessWidget {
                   padding: EdgeInsets.all(0.0),
                 ),
                 trailing: new CupertinoButton(
-                  child: new Icon(
-                    CustomIcons.bell,
-                    size: 24.0,
-                    color: Colors.grey,
+                  child: new Stack(
+                    children: <Widget>[
+                      new Icon(CustomIcons.bell, color: Colors.grey,),
+                      new Positioned(  // draw a red marble
+                        top: 0.0,
+                        right: 0.0,
+                        child: new Icon(Icons.brightness_1, size: 14.0, 
+                          color: Colors.redAccent),
+                      ),
+                    ]
                   ),
                   onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return new CupertinoAlertDialog();
-                        });
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NotificationPage(),
+                      ),
+                    );
                   },
                   padding: EdgeInsets.all(0.0),
                 ),
