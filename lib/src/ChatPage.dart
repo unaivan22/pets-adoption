@@ -4,7 +4,21 @@ import 'package:flutter/cupertino.dart';
 import 'chat_detail.dart';
 import 'custom_icons.dart';
 
-class ChatPage extends StatelessWidget {
+
+String selectedCategorie= "All";
+
+
+class ChatPage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+
+
+class _HomePageState extends State<ChatPage> {
+  
+  List<String> categories = ["All","Unread","Read","Done"];
+
   @override
   Widget build(BuildContext context) {
     if (isIos) {
@@ -39,6 +53,24 @@ class ChatPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                Container(
+                  // padding: EdgeInsets.all(10.0),
+                  // color: Colors.pink,
+                  margin: EdgeInsets.only(top: 20.0,bottom: 20.0),
+                  height: 40,
+                  child: ListView.builder(
+                  itemCount: categories.length,
+                      shrinkWrap: true,
+                      physics: ClampingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index){
+                    return CategorieTile(
+                      categorie: categories[index],
+                      isSelected: selectedCategorie == categories[index],
+                      context: this,
+                    );
+                      }),
+                ),
                 ListView.builder(
                   padding: EdgeInsets.only(top: 0),
                   itemCount: 40,
@@ -154,5 +186,45 @@ class ChatPage extends StatelessWidget {
         ),
       );
     }
+  }
+}
+
+
+class CategorieTile extends StatefulWidget {
+
+  final String categorie;
+  final bool isSelected;
+  _HomePageState context;
+  CategorieTile({this.categorie, this.isSelected,this.context});
+
+  @override
+  _CategorieTileState createState() => _CategorieTileState();
+}
+
+
+class _CategorieTileState extends State<CategorieTile> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: (){
+        widget.context.setState(() {
+          selectedCategorie = widget.categorie;
+        });
+      },
+      child: Container(
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        margin: EdgeInsets.only(left: 8),
+        height: 20,
+        decoration: BoxDecoration(
+          color: widget.isSelected ? Color(0xffFFD0AA) : Colors.white,
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(color: Colors.orange)
+        ),
+        child: Text(widget.categorie, style: TextStyle(
+          color: widget.isSelected ?  Color(0xffFC9535) : Color(0xffA1A1A1)
+        ),),
+      ),
+    );
   }
 }
