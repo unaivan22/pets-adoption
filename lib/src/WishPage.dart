@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'custom_icons.dart';
+import 'NotificationPage.dart';
 
 class WishPage extends StatelessWidget {
   @override
@@ -15,19 +16,27 @@ class WishPage extends StatelessWidget {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               CupertinoSliverNavigationBar(
+                heroTag: 'wishPage',
                 largeTitle: Text('List of Wish'),
-                trailing: new CupertinoButton(
-                  child: new Icon(
-                    CustomIcons.bell,
-                    size: 24.0,
-                    color: Colors.grey,
+                 trailing: new CupertinoButton(
+                  child: new Stack(
+                    children: <Widget>[
+                      new Icon(CustomIcons.bell, color: Colors.grey,),
+                      new Positioned(  // draw a red marble
+                        top: 0.0,
+                        right: 0.0,
+                        child: new Icon(Icons.brightness_1, size: 14.0, 
+                          color: Colors.redAccent),
+                      ),
+                    ]
                   ),
                   onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return new CupertinoAlertDialog();
-                        });
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NotificationPage(),
+                      ),
+                    );
                   },
                   padding: EdgeInsets.all(0.0),
                 ),

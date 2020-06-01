@@ -19,6 +19,7 @@ class ProfilePage extends StatelessWidget {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               CupertinoSliverNavigationBar(
+                heroTag: 'profilePage',
                 largeTitle: Text('Profile'),
                 leading: new CupertinoButton(
                   onPressed: () {},
@@ -28,7 +29,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   padding: EdgeInsets.all(0.0),
                 ),
-                trailing: new CupertinoButton(
+                 trailing: new CupertinoButton(
                   child: new Stack(
                     children: <Widget>[
                       new Icon(CustomIcons.bell, color: Colors.grey,),
