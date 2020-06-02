@@ -137,7 +137,7 @@ class ProfilePage extends StatelessWidget {
                                 padding: EdgeInsets.only(top: 5),
                               ),
                               Text(
-                                'Privacy & andogout',
+                                'Privacy & and logout',
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   color: Colors.black54,

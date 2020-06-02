@@ -13,7 +13,7 @@ class ChatDetails extends StatelessWidget{
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Notifications"),
+        middle: Text("Chat"),
       ),
       child: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -29,6 +29,7 @@ class ChatDetails extends StatelessWidget{
                     child: ListView.builder(
                       itemCount: 1,
                       shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
                       itemBuilder: (BuildContext context, int index) {
                         return Padding(
                           padding: EdgeInsets.all(10),
@@ -40,11 +41,11 @@ class ChatDetails extends StatelessWidget{
                                     TextStyle(color: Colors.grey, fontSize: 12),
                               ),
                               Bubble(
-                                message: 'Hi How are you ?',
+                                message: 'Apakah kucingnya masih ready om?',
                                 isMe: true,
                               ),
                               Bubble(
-                                message: 'have you seen the docs yet?',
+                                message: 'lokasi mana om?',
                                 isMe: true,
                               ),
                               Text(
@@ -53,13 +54,40 @@ class ChatDetails extends StatelessWidget{
                                     TextStyle(color: Colors.grey, fontSize: 12),
                               ),
                               Bubble(
-                                message: 'i am fine !',
+                                message: 'Ready om',
                                 isMe: false,
                               ),
                               Bubble(
-                                message: 'yes i\'ve seen the docs',
+                                message: 'Ready Om. Lokasi Madiun Selatan, kalau minat langsung pantau aja om',
                                 isMe: false,
                               ),
+                              Text(
+                                'Today',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 12),
+                              ),
+                              Bubble(
+                                message: 'Apakah kucingnya masih ready om?',
+                                isMe: true,
+                              ),
+                              Bubble(
+                                message: 'lokasi mana om?',
+                                isMe: true,
+                              ),
+                              Text(
+                                'Feb 25, 2018',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 12),
+                              ),
+                              Bubble(
+                                message: 'Ready om',
+                                isMe: false,
+                              ),
+                              Bubble(
+                                message: 'Ready Om. Lokasi Madiun Selatan, kalau minat langsung pantau aja om',
+                                isMe: false,
+                              ),
+
                             ],
                           ),
                         );
@@ -69,59 +97,59 @@ class ChatDetails extends StatelessWidget{
                 ],
               ),
             ),
-            // Positioned(
-            //   bottom: 0,
-            //   left: 0,
-            //   // width: MediaQuery.of(context).size.width,
-            //   child: Container(
-            //     padding: EdgeInsets.all(10),
-            //     decoration: BoxDecoration(color: Colors.white, boxShadow: [
-            //       BoxShadow(
-            //         color: Colors.grey[300],
-            //         offset: Offset(-2, 0),
-            //         blurRadius: 5,
-            //       ),
-            //     ]),
-            //     child: Row(
-            //         children: <Widget>[
-            //         Text('unad disini'),
-            //         IconButton(
-            //           onPressed: () {},
-            //           icon: Icon(
-            //             Icons.camera,
-            //             color: Color(0xff3E8DF3),
-            //           ),
-            //         ),
-            //         IconButton(
-            //           onPressed: () {},
-            //           icon: Icon(
-            //             Icons.image,
-            //             color: Color(0xff3E8DF3),
-            //           ),
-            //         ),
-            //         Padding(
-            //           padding: EdgeInsets.only(left: 15),
-            //         ),
-            //         Expanded(
-            //           child: TextFormField(
-            //             keyboardType: TextInputType.text,
-            //             decoration: InputDecoration(
-            //               hintText: 'Enter Message',
-            //               border: InputBorder.none,
-            //             ),
-            //           ),
-            //         ),
-            //         IconButton(
-            //           onPressed: () {},
-            //           icon: Icon(
-            //             Icons.send,
-            //             color: Color(0xff3E8DF3),
-            //           ),
-            //         ),
-            //       ],
-            //       ),
-            //   ),
-            // )
+            Positioned(
+              bottom: 10,
+              left: 10,
+              // width: MediaQuery.of(context).size.width,
+              child: Container(
+                padding: EdgeInsets.all(200),
+                decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey[300],
+                    offset: Offset(-2, 0),
+                    blurRadius: 5,
+                  ),
+                ]),
+                child: Row(
+                    children: <Widget>[
+                    Text('unad disini'),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.camera,
+                        color: Color(0xff3E8DF3),
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.image,
+                        color: Color(0xff3E8DF3),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 15),
+                    ),
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          hintText: 'Enter Message',
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.send,
+                        color: Color(0xff3E8DF3),
+                      ),
+                    ),
+                  ],
+                  ),
+              ),
+            )
           ],
         ),
       ),
@@ -279,8 +307,8 @@ class Bubble extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(5),
-      padding: isMe ? EdgeInsets.only(left: 40) : EdgeInsets.only(right: 40),
+      margin: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
+      padding: isMe ? EdgeInsets.only(left: 40,) : EdgeInsets.only(right: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -313,8 +341,8 @@ class Bubble extends StatelessWidget {
                               1
                             ],
                           colors: [
-                              Color(0xFFEBF5FC),
-                              Color(0xFFEBF5FC),
+                              Hexcolor("#F0F0F0"),
+                              Hexcolor("#F0F0F0"),
                             ]),
                   borderRadius: isMe
                       ? BorderRadius.only(
@@ -338,7 +366,8 @@ class Bubble extends StatelessWidget {
                       message,
                       textAlign: isMe ? TextAlign.end : TextAlign.start,
                       style: TextStyle(
-                        color: isMe ? Colors.white : Colors.grey,
+                        fontSize: 14,
+                        color: isMe ? Hexcolor("#ffffff") : Hexcolor("#000000"),
                       ),
                     )
                   ],

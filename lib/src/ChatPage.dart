@@ -5,6 +5,8 @@ import 'chat_detail.dart';
 import 'custom_icons.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'NotificationPage.dart';
+import 'package:badges/badges.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 
 String selectedCategorie= "All";
@@ -64,23 +66,57 @@ class _HomePageState extends State<ChatPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  // padding: EdgeInsets.all(10.0),
-                  // color: Colors.pink,
-                  margin: EdgeInsets.only(top: 20.0,bottom: 20.0),
-                  height: 40,
-                  child: ListView.builder(
-                  itemCount: categories.length,
-                      shrinkWrap: true,
-                      physics: ClampingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index){
-                    return CategorieTile(
-                      categorie: categories[index],
-                      isSelected: selectedCategorie == categories[index],
-                      context: this,
-                    );
-                      }),
+                  padding: EdgeInsets.all(10.0),
+                  margin: EdgeInsets.only(top: 8.0, bottom: 16.0),
+                  child: CupertinoTextField(
+                  clearButtonMode: OverlayVisibilityMode.editing,
+                  // controller: _myPhoneField,  // Add this
+                  prefix: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(
+                      CupertinoIcons.search,
+                      color: Hexcolor('#848387'),
+                    ),
+                  ),
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                  keyboardType: TextInputType.text,
+                  maxLength: 10,
+                  maxLines: 1,
+                  maxLengthEnforced: true,
+                  placeholder: 'Search',
+                  // onChanged: (v) {
+                  //   print(v);
+                  // },
+                  decoration: BoxDecoration(
+                    color: Hexcolor('#eeeeee'),
+                    border: Border.all(
+                      width: 1.0,
+                      color: Hexcolor('#EEEEEE'),
+                    ),
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
                 ),
+              ),
+                // Container(
+                //   // padding: EdgeInsets.all(10.0),
+                //   // color: Colors.pink,
+                //   margin: EdgeInsets.only(top: 20.0,bottom: 20.0),
+                //   height: 40,
+                //   child: ListView.builder(
+                //   itemCount: categories.length,
+                //       shrinkWrap: true,
+                //       physics: ClampingScrollPhysics(),
+                //       scrollDirection: Axis.horizontal,
+                //       itemBuilder: (context, index){
+                //     return CategorieTile(
+                //       categorie: categories[index],
+                //       isSelected: selectedCategorie == categories[index],
+                //       context: this,
+                //     );
+                //       }),
+                // ),
                 ListView.builder(
                   padding: EdgeInsets.only(top: 0),
                   itemCount: 40,
@@ -135,7 +171,7 @@ class _HomePageState extends State<ChatPage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      'Jocelyn',
+                                      'Unaivan',
                                       style: TextStyle(
                                         color: Colors.black87,
                                         fontWeight: FontWeight.bold,
@@ -146,7 +182,7 @@ class _HomePageState extends State<ChatPage> {
                                       padding: EdgeInsets.only(top: 5),
                                     ),
                                     Text(
-                                      'Hi, this cat are amazing, if you are interested you can see it directly',
+                                      'Ready Om. Lokasi Madiun Selatan, kalau minat langsung pantau aja om',
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                         color: Colors.black54,
@@ -166,17 +202,17 @@ class _HomePageState extends State<ChatPage> {
                                   ],
                                 ),
                               ),
-                              // Column(
-                              //   children: <Widget>[
-                              //     Padding(
-                              //       padding: EdgeInsets.only(right: 15),
-                              //       child: Icon(
-                              //         Icons.chevron_right,
-                              //         size: 18,
-                              //       ),
-                              //     )
-                              //   ],
-                              // )
+                              Container(
+                                padding: EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: <Widget>[
+                                   Badge(
+                                    badgeColor: Colors.deepPurple,
+                                    badgeContent: Text('$index', style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w700)),
+                                    ),
+                                  ],
+                                ),
+                              )
                             ],
                           ),
                         ),
