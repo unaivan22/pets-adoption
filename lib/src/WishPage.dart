@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
-import 'custom_icons.dart';
+import 'package:pets_adoption/extensions/custom_icons.dart';
 import 'NotificationPage.dart';
 
 class WishPage extends StatelessWidget {

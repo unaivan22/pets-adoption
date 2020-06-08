@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'chat_detail.dart';
-import 'custom_icons.dart';
+import 'package:pets_adoption/extensions/custom_icons.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'NotificationPage.dart';
 import 'package:badges/badges.dart';
@@ -69,34 +69,34 @@ class _HomePageState extends State<ChatPage> {
                   padding: EdgeInsets.all(10.0),
                   margin: EdgeInsets.only(top: 8.0, bottom: 16.0),
                   child: CupertinoTextField(
-                  clearButtonMode: OverlayVisibilityMode.editing,
-                  // controller: _myPhoneField,  // Add this
-                  prefix: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Icon(
-                      CupertinoIcons.search,
-                      color: Hexcolor('#848387'),
+                    clearButtonMode: OverlayVisibilityMode.editing,
+                    // controller: _myPhoneField,  // Add this
+                    prefix: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        CupertinoIcons.search,
+                        color: Hexcolor('#848387'),
+                      ),
                     ),
-                  ),
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                  keyboardType: TextInputType.text,
-                  maxLength: 10,
-                  maxLines: 1,
-                  maxLengthEnforced: true,
-                  placeholder: 'Search',
-                  // onChanged: (v) {
-                  //   print(v);
-                  // },
-                  decoration: BoxDecoration(
-                    color: Hexcolor('#eeeeee'),
-                    border: Border.all(
-                      width: 1.0,
-                      color: Hexcolor('#EEEEEE'),
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
+                    keyboardType: TextInputType.text,
+                    maxLength: 10,
+                    maxLines: 1,
+                    maxLengthEnforced: true,
+                    placeholder: 'Search',
+                    // onChanged: (v) {
+                    //   print(v);
+                    // },
+                    decoration: BoxDecoration(
+                      color: Hexcolor('#eeeeee'),
+                      border: Border.all(
+                        width: 1.0,
+                        color: Hexcolor('#EEEEEE'),
+                      ),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
                 ),
               ),
                 // Container(

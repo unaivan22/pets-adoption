@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'chat_detail.dart';
-import 'custom_icons.dart';
+import 'package:pets_adoption/extensions/custom_icons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:badges/badges.dart';
 

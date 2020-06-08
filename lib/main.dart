@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pets_adoption/src/TestRoute.dart';
-import 'src/MyHomePage.dart';
+// import 'src/MyHomePage.dart';
 import 'src/Foundation.dart';
 import 'package:flutter/cupertino.dart';
+import 'src/login.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,14 +13,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     if (isIos) {
       return CupertinoApp(
-        routes: <String, WidgetBuilder> {
-          '/TestRoute': (BuildContext context) => new TestRoute(),
-        },
+        // routes: <String, WidgetBuilder> {
+        //   '/TestRoute': (BuildContext context) => new TestRoute(),
+        // },
         theme: CupertinoThemeData(
-            barBackgroundColor: CupertinoColors.extraLightBackgroundGray,
+            barBackgroundColor: CupertinoColors.white,
             primaryColor: CupertinoColors.activeBlue),
         home: MyHomePage(
-          title: "Ios",
+          // title: "Ios",
         ),
         debugShowCheckedModeBanner: false
       );
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         theme: ThemeData.dark(),
         home: MyHomePage(
-          title: "Android",
+          // title: "Android",
         ),
         debugShowCheckedModeBanner: false
       );

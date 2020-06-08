@@ -3,22 +3,23 @@ import 'Foundation.dart';
 import 'package:flutter/cupertino.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'custom_icons.dart' as CustomIcons;
-import 'custom_icons.dart';
+import 'package:pets_adoption/extensions/custom_icons.dart';
 import 'NearestPage.dart';
 import 'WishPage.dart';
 import 'ChatPage.dart';
 import 'ProfilePage.dart';
+import 'package:hexcolor/hexcolor.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MyHomePageBase extends StatefulWidget {
+  MyHomePageBase({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomePageBaseState createState() => _MyHomePageBaseState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageBaseState extends State<MyHomePageBase> {
   int currentTabIndex = 0;
 
   onTapped(int index) {
@@ -40,13 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
       return CupertinoTabScaffold(
           tabBar: CupertinoTabBar(items: [
             BottomNavigationBarItem(
-                icon: Icon(CustomIcons.paw, size: 22.0,), title: Text("Nearest")),
+                icon: Icon(CustomIcons.paw, size: 22.0,), ),
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.heart_solid, size: 24.0,), title: Text("Wish")),
+                icon: Icon(CupertinoIcons.heart_solid, size: 24.0,),),
             BottomNavigationBarItem(
-                icon: Icon(CustomIcons.comments, size: 22.0,), title: Text("Chat")),
+                icon: Icon(CustomIcons.comments, size: 22.0,)),
             BottomNavigationBarItem(
-                icon: Icon(CustomIcons.user_alt, size: 21.0,), title: Text("Profile"))
+                icon: Icon(CustomIcons.user_alt, size: 21.0,),)
+            // BottomNavigationBarItem(
+            // icon: Icon(CustomIcons.user_alt, size: 21.0,), title: Text("Profile"))
           ]),
           tabBuilder: (context, index) {
             switch (index) {
