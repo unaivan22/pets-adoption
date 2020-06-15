@@ -19,4 +19,4 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Preview
 
-<img src="https://dribbble.com/shots/12073439-Simple-Pets-Adoption-Concept-iOS-Base-Concept" width="350" title="hover text">
+<img src="https://cdn.dribbble.com/users/2709992/screenshots/12073439/media/2ac24434a155aec442ac14aa10398308.jpg" width="350">
