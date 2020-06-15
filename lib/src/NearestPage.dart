@@ -120,29 +120,29 @@ class _HomePageState extends State<NearestPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   //ROW 1
                   children: [
-                    GestureDetector(
-                          onTap:() {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailPetPage(),
-                          ),
-                        );
-                      },
-                      child: Column(
-                      children: <Widget>[
-                        Container(
-                        width: 120.0,
-                        height: 120.0,
-                        decoration: new BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: new DecorationImage(
-                                fit: BoxFit.cover,
-                                image: new NetworkImage(
-                                    "https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1283&q=80")))),
-                      ],
-                      ),
-                    ),
+                    // GestureDetector(
+                    //       onTap:() {
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //         builder: (context) => DetailPetPage(),
+                    //       ),
+                    //     );
+                    //   },
+                    //   child: Column(
+                    //   children: <Widget>[
+                    //     Container(
+                    //     width: 120.0,
+                    //     height: 120.0,
+                    //     decoration: new BoxDecoration(
+                    //         shape: BoxShape.circle,
+                    //         image: new DecorationImage(
+                    //             fit: BoxFit.cover,
+                    //             image: new NetworkImage(
+                    //                 "https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1283&q=80")))),
+                    //   ],
+                    //   ),
+                    // ),
                     Container(
                         width: 120.0,
                         height: 120.0,

@@ -207,7 +207,7 @@ class _HomePageState extends State<ChatPage> {
                                 child: Column(
                                   children: <Widget>[
                                    Badge(
-                                    badgeColor: Colors.deepPurple,
+                                    badgeColor: Hexcolor('#047AFF'),
                                     badgeContent: Text('$index', style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w700)),
                                     ),
                                   ],

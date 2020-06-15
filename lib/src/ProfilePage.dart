@@ -70,7 +70,7 @@ class ProfilePage extends StatelessWidget {
                         image: new DecorationImage(
                             fit: BoxFit.cover,
                             image: new NetworkImage(
-                                "https://avatars1.githubusercontent.com/u/25717454?s=460&u=ea40151ad2416268a9fd5b268277aa1d28579da5&v=4")))),
+                                "https://avatars3.githubusercontent.com/u/25717454?s=460&u=cf72661a2a01e4cc013ac534664e43027dd6f2dd&v=4")))),
                 GestureDetector(
                   child: Container(
                   margin: EdgeInsets.only(top: 10.0, bottom: 30.0),
@@ -297,7 +297,7 @@ class ProfilePage extends StatelessWidget {
                                 padding: EdgeInsets.only(top: 5),
                               ),
                               Text(
-                                'To View Your Profile as Spectator',
+                                'View Profile as Spectator',
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   color: Colors.black54,
